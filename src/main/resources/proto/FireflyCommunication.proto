@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "proto";
+
+service Updater {
+  rpc updateState (UpdateStateRequest) returns (GetStateReply) {}
+}
+
+message UpdateStateRequest {
+  int32 posX = 1;
+  int32 posY = 2;
+  double phase = 3;
+}
+
+message GetStateReply {
+  repeated double values = 1;
+}
